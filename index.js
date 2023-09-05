@@ -6,7 +6,7 @@ async function compareDates(defaultStart, defaultEnd, target){
     for(let [startDateB, endDateB] of file.dates ){
         console.log('testing file', startDateB, endDateB)
         if(defaultStart <= endDateB && defaultEnd >= startDateB){
-            if(defaultStart<=startDateB)
+            if(defaultStart>=startDateB)
                 startDateB = defaultStart;
             if(defaultEnd<=endDateB)
                 endDateB = defaultEnd;
