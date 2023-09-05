@@ -9,8 +9,7 @@ async function compareDates(startDateA, endDateA, target){
             console.log('overlap');
         }
     }
-
-
 }
 
-await compareDates('2024/01/01', '2024/12/31', './dates.json');
+// await compareDates('2024/01/01', '2024/12/31', './dates1.json');
+await compareDates('2024/01/01', '2024/12/31', './dates2.json');
