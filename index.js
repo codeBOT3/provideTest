@@ -1,14 +1,16 @@
 import {getRelativeJson} from "./sourceJSON.js";
 
-async function compareDates(beginDate, endDate, target){
+async function compareDates(startDateA, endDateA, target){
     let file = await getRelativeJson(target);
     console.log(file);
-    for(let [begda, enda] of file.dates ){
-        console.log('testing file', begda, enda)
-        if(beginDate <= begda && endDate <= enda)
+    for(let [startDateB, endDateB] of file.dates ){
+        console.log('testing file', startDateB, endDateB)
+        if(startDateA <= endDateB && endDateA >= startDateB){
+            console.log('overlap');
+        }
     }
 
 
 }
 
-await compareDates('testBegin', 'testEnd', './dates.json');
+await compareDates('2024/01/01', '2024/12/31', './dates.json');
