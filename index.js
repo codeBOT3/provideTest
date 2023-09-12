@@ -64,7 +64,6 @@ async function readJson(list){
     }
     return result;
 }
-
 /*function dataCleanup(defaultStart, defaultEnd, target){
     let result = [];
     for(let [startDateB, endDateB] of  target){
@@ -84,18 +83,13 @@ async function readJson(list){
 
 function listComparison(list){
     let index = 0;
-
     let result = compareDates(list[index], list[index+1]);
     index+=2;
-
     while (index < list.length){
         result = compareDates(result, list[index]);
         index+=1;
     }
     return result;
-
-
-
     /*while (index < list.length-1){
         let curr = result;
         index++;
@@ -129,11 +123,14 @@ console.log('compareSets result :', res);
 
 console.log("clean data: ", cleaned);*/
 
-let files = ['./set_c.json', './set_d.json', './default_dates.json'];
+let files = ['./set_f.json', './set_g.json', './default_dates.json'];
 let list = await readJson(files);
 let res = listComparison(list);
 console.log(res);
 
+let data = new Map();
+data.set('tables',['./set_e.json', './set_.json', './default_dates.json']);
+data.set('fields',[['amount','job_description', 'pay_grade'],['status']]);
 
 
 
